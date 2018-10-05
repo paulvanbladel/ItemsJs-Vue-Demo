@@ -1,8 +1,8 @@
 <template>
   <div>
     <q-search inverted color='primary' v-model="query" @clear="reset()" placeholder="Type your search here..." clearable />
-     <p class="text-right">Search result amount : ({{ searchResult.pagination.total }})</p>
-    <p class="text-right">Search performed in {{ searchResult.timings.search }} ms, facets in {{ searchResult.timings.facets }} ms</p>
+     <!-- <p class="text-right">Search result amount : ({{ searchResult.pagination.total }})</p>
+     <p class="text-right">Search performed in {{ searchResult.timings.search }} ms, facets in {{ searchResult.timings.facets }} ms</p> -->
     <br>
     <div>
       <span v-for="facet in searchResult.data.aggregations" :key="facet.name">
