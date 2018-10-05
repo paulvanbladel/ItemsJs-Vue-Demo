@@ -1,5 +1,7 @@
 # app
 
+Sample based on the exquisite ItemsJs library https://github.com/itemsapi/itemsjs
+
 ## Project setup
 ```
 npm install
