@@ -70,7 +70,7 @@ export default {
   },
   data () {
     return {
-      leftDrawerOpen: false //this.$q.platform.is.desktop
+      leftDrawerOpen: this.$q.platform.is.desktop
     }
   },
   methods: {
