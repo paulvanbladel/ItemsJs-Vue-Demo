@@ -2,6 +2,7 @@
   <q-page padding>
     <div class="row">
       <div class="col-3">
+
         <items-js-facets
           :rows="jsonData"
           :configuration="configuration"

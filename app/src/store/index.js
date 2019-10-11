@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-// import example from './module-example'
+import { Database } from 'vuex-typed-modules'
+import { testModule } from './test.module'
 
 Vue.use(Vuex)
 
@@ -9,17 +10,11 @@ Vue.use(Vuex)
  * If not building with SSR mode, you can
  * directly export the Store instantiation
  */
+const database = new Database({ logger: true })
+export default new Vuex.Store({
+  plugins: [database.deploy([testModule])],
 
-export default function (/* { ssrContext } */) {
-  const Store = new Vuex.Store({
-    modules: {
-      // example
-    },
-
-    // enable strict mode (adds overhead!)
-    // for dev mode only
-    strict: process.env.DEV
-  })
-
-  return Store
-}
+  // enable strict mode (adds overhead!)
+  // for dev mode only
+  strict: process.env.DEV
+})
