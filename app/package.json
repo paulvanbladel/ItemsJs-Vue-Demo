@@ -1,48 +1,46 @@
 {
   "name": "app",
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "Quasar App",
+  "cordovaId": "org.cordova.quasar.app",
+  "capacitorId": "",
+  "author": "Paul Van Bladel <paul.vanbladel@gmail.com>",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "lint": "eslint --ext .js,.vue src",
+    "test": "echo \"See package.json => scripts for available tests.\" && exit 0",
+    "test:unit": "jest --updateSnapshot",
+    "test:unit:coverage": "jest --coverage",
+    "test:unit:watch": "jest --watch",
+    "test:unit:watchAll": "jest --watchAll",
+    "serve:test:coverage": "quasar serve test/jest/coverage/lcov-report/ --port 8788",
+    "concurrently:dev:jest": "concurrently \"quasar dev\" \"jest --watch\""
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
-    "core-js": "^2.6.5",
+    "axios": "^0.18.1",
     "itemsjs": "^1.0.49",
     "quasar": "^1.0.0",
-    "register-service-worker": "^1.6.2",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vue-i18n": "^8.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^23.1.4",
-    "@vue/cli-plugin-babel": "^3.12.0",
-    "@vue/cli-plugin-eslint": "^3.12.0",
-    "@vue/cli-plugin-pwa": "^3.12.0",
-    "@vue/cli-plugin-typescript": "^3.12.0",
-    "@vue/cli-plugin-unit-jest": "^3.12.0",
-    "@vue/cli-service": "^3.12.0",
-    "@vue/eslint-config-prettier": "^5.0.0",
-    "@vue/eslint-config-typescript": "^4.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-core": "7.0.0-bridge.0",
+    "@quasar/app": "^1.0.0",
+    "@quasar/quasar-app-extension-testing": "^1.0.0",
+    "@quasar/quasar-app-extension-testing-unit-jest": "^1.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
-    "babel-plugin-transform-imports": "1.5.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint": "^5.10.0",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^5.0.0",
-    "prettier": "^1.18.2",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "ts-jest": "^23.0.0",
-    "typescript": "^3.4.3",
-    "vue-cli-plugin-quasar": "^1.0.0",
-    "vue-template-compiler": "^2.6.10"
-  }
+    "wallaby-vue-compiler": "^1.0.3"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
 }

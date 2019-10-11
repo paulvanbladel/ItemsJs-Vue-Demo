@@ -12,8 +12,14 @@
      <p class="text-right">Search performed in {{ searchResult.timings.search }} ms, facets in {{ searchResult.timings.facets }} ms</p> -->
     <br />
     <div>
-      <span v-for="facet in searchResult.data.aggregations" :key="facet.name">
-        <span v-for="bucket in filters[facet.name]" :key="bucket.key">
+      <span
+        v-for="facet in searchResult.data.aggregations"
+        :key="facet.name"
+      >
+        <span
+          v-for="bucket in filters[facet.name]"
+          :key="bucket.key"
+        >
           <q-chip
             removable
             text-color="white"
@@ -38,7 +44,10 @@
           "
           :label="getFacetLabel(facet2)"
         >
-          <q-item v-for="bucket in facet2.buckets" :key="bucket.key">
+          <q-item
+            v-for="bucket in facet2.buckets"
+            :key="bucket.key"
+          >
             <q-checkbox
               v-model="filters[facet2.name]"
               :val="bucket.key"
@@ -53,55 +62,55 @@
 </template>
 <style></style>
 <script>
-import itemsjs from "itemsjs";
+import itemsjs from 'itemsjs'
 export default {
-  props: ["rows", "configuration"],
-  created() {
-    this.itemsJsInstance = itemsjs(this.rows, this.configuration);
+  props: ['rows', 'configuration'],
+  created () {
+    this.itemsJsInstance = itemsjs(this.rows, this.configuration)
   },
-  data() {
-    var filters = {};
-    Object.keys(this.configuration.aggregations).map(function(v) {
-      filters[v] = [];
-    });
+  data () {
+    var filters = {}
+    Object.keys(this.configuration.aggregations).map(function (v) {
+      filters[v] = []
+    })
 
     return {
-      query: "",
+      query: '',
       filters,
       itemsJsInstance: {}
-    };
+    }
   },
   methods: {
-    getFacetLabel(facet) {
-      return facet.title;
+    getFacetLabel (facet) {
+      return facet.title
     },
-    unselectBucket(facetName, tagBucket) {
+    unselectBucket (facetName, tagBucket) {
       this.filters[facetName] = this.filters[facetName].filter(
         item => item !== tagBucket
-      );
+      )
     },
-    getBucketLabel(bucket) {
-      return bucket.key + " (" + bucket.doc_count + ")";
+    getBucketLabel (bucket) {
+      return bucket.key + ' (' + bucket.doc_count + ')'
     },
-    reset() {
-      var filters = {};
-      Object.keys(this.optionList.aggregations).map(function(v) {
-        filters[v] = [];
-      });
-      this.filters = filters;
-      this.query = "";
+    reset () {
+      var filters = {}
+      Object.keys(this.optionList.aggregations).map(function (v) {
+        filters[v] = []
+      })
+      this.filters = filters
+      this.query = ''
     }
   },
   computed: {
-    searchResult() {
+    searchResult () {
       let result = this.itemsJsInstance.search({
         per_page: 100,
         query: this.query,
         filters: this.filters
-      });
-      this.$emit("searchResultUpdated", result.data.items);
-      return result;
+      })
+      this.$emit('searchResultUpdated', result.data.items)
+      return result
     }
   }
-};
+}
 </script>
