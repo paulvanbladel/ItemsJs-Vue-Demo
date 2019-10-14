@@ -22,7 +22,9 @@ export const testModule = new VuexModule({
   },
   actions: {
     increment (context, count) {
-      testModule.mutations.addCount(count)
+      debugger
+
+      context.commit('addCount', count + context.state.count)
     }
   }
 })
