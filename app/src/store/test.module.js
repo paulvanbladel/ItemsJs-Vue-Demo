@@ -11,8 +11,8 @@ export const testModule = new VuexModule({
     testGetter (state) {
       return state.myProp
     },
-    testGetter2 () {
-      return testModule.state.myProp
+    testGetter2 (state) {
+      return state.myProp
     }
   },
   mutations: {
