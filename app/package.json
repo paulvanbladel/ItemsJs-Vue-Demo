@@ -23,7 +23,7 @@
     "itemsjs": "^1.0.49",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0",
-    "vuex-typed-modules": "^2.0.93"
+    "vuex-typed-modules": "^2.1.0"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",

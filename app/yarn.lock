@@ -10121,10 +10121,10 @@ vue@2.6.10:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
 
-vuex-typed-modules@^2.0.93:
-  version "2.0.93"
-  resolved "https://registry.yarnpkg.com/vuex-typed-modules/-/vuex-typed-modules-2.0.93.tgz#562ff5db4474a2af6c97c590ccc0baad3ede08b4"
-  integrity sha512-beTxwP4nhXpQaEL3GmyNeCCh5HGeR9VqBFdc8jKHjQSCgZEku18h7ngULpk/c1OI1lUAclgVmjPCKVGMhv6chw==
+vuex-typed-modules@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vuex-typed-modules/-/vuex-typed-modules-2.1.0.tgz#915616da2c31ccbb0c5a1703d2f9beb602b63542"
+  integrity sha512-i747muTYWbdZUppgEWbvgYX7dujfCkxWn9M8rW4hKCvCTDa12A9DKR40EM5ehJXK5gl8l5ehnNURj4uPmy7QoQ==
   dependencies:
     typescript "^3.5.0"
     vue "2.6.10"
